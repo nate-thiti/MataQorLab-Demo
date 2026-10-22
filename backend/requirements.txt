@@ -14,7 +14,7 @@ requests==2.34.2
 stripe==15.3.0
 sqlalchemy==2.0.51
 psycopg2-binary==2.9.12
-pymysql==1.2.0
+pymysql==1.2.3
 # Optional drivers for additional database providers (install as needed):
 # pyodbc            # SQL Server
 # oracledb          # Oracle
