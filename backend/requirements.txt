@@ -12,7 +12,7 @@ python-multipart==0.0.32
 pyarrow==24.0.0
 requests==2.34.2
 stripe==15.3.0
-sqlalchemy==2.0.51
+sqlalchemy==2.1.5
 psycopg2-binary==2.9.12
 pymysql==1.2.0
 # Optional drivers for additional database providers (install as needed):
