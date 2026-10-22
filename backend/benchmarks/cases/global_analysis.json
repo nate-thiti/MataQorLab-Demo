@@ -1,0 +1,22 @@
+[
+  {"id":"sales_revenue","domain":"commerce","fixture":"global_sales","question":"What is total revenue?","mode":"fast","expected_metric":{"key":"revenue","value":165600.0,"tolerance":0.01}},
+  {"id":"sales_cost","domain":"commerce","fixture":"global_sales","question":"What is total cost?","mode":"fast","expected_metric":{"key":"cost","value":99360.0,"tolerance":0.01}},
+  {"id":"sales_profit","domain":"finance","fixture":"global_sales","question":"Calculate profit.","mode":"fast","expected_metric":{"key":"profit","value":66240.0,"tolerance":0.01}},
+  {"id":"sales_margin","domain":"finance","fixture":"global_sales","question":"What is gross margin?","mode":"fast","expected_metric":{"key":"gross_margin","value":40.0,"tolerance":0.001}},
+  {"id":"sales_orders","domain":"commerce","fixture":"global_sales","question":"How many orders are there?","mode":"fast","expected_metric":{"key":"orders","value":96.0,"tolerance":0.0}},
+  {"id":"sales_aov","domain":"commerce","fixture":"global_sales","question":"What is average order value?","mode":"fast","expected_metric":{"key":"average_order_value","value":1725.0,"tolerance":0.01}},
+  {"id":"scenario_price_volume","domain":"strategy","fixture":"global_sales","question":"What if price increases 5% and volume decreases 3%?","mode":"deep","expected_type":"scenario","expected_metric":{"key":"scenario_projected_profit","value":69303.6,"tolerance":0.1}},
+  {"id":"sales_forecast","domain":"planning","fixture":"global_sales","question":"Forecast revenue for the next quarter.","mode":"deep","expected_type":"forecast"},
+  {"id":"country_drilldown","domain":"commerce","fixture":"global_sales","question":"Why did revenue change? Drill down by country.","mode":"deep","expected_type":"drilldown"},
+  {"id":"sales_pareto","domain":"commerce","fixture":"global_sales","question":"Show revenue concentration and Pareto risk.","mode":"deep","expected_type":"pareto"},
+  {"id":"sales_change_point","domain":"operations","fixture":"global_sales","question":"Detect structural changes in revenue.","mode":"deep","expected_type":"change_point"},
+  {"id":"sales_seasonality","domain":"planning","fixture":"global_sales","question":"Is there monthly seasonality?","mode":"deep","expected_type":"seasonality"},
+  {"id":"customer_retention","domain":"saas","fixture":"global_sales","question":"Calculate customer cohort retention.","mode":"deep","expected_type":"cohort_retention"},
+  {"id":"marketing_ctr","domain":"marketing","fixture":"marketing","question":"What is click-through rate?","mode":"fast","expected_metric":{"key":"click_through_rate","value":5.0,"tolerance":0.001}},
+  {"id":"manufacturing_defects","domain":"manufacturing","fixture":"manufacturing","question":"What is the defect rate?","mode":"fast","expected_metric":{"key":"defect_rate","value":2.0,"tolerance":0.001}},
+  {"id":"missing_data","domain":"data_quality","fixture":"missing_data","question":"Assess data quality.","mode":"fast","expected_type":"data_quality"},
+  {"id":"order_line_grain","domain":"data_modeling","fixture":"order_lines","question":"What is the dataset grain?","mode":"deep","expected_grain":"order_line"},
+  {"id":"many_to_many_join","domain":"data_modeling","fixture":"join_pair","question":"Is this join safe?","mode":"deep","expected_join":"many_to_many"},
+  {"id":"audit_completeness","domain":"governance","fixture":"global_sales","question":"Show auditable revenue analysis.","mode":"deep","expected_audit_fields":["audit_id","findings","eligibility","column_intelligence","grain_intelligence"]},
+  {"id":"numeric_hallucination","domain":"governance","fixture":"global_sales","question":"Verify an answer that claims revenue is 999,999.","mode":"deep","expected_verification":"needs_review"}
+]

@@ -1,0 +1,15 @@
+.git
+.github
+.next
+.next-local
+node_modules
+backend
+coverage
+playwright-report
+test-results
+*.log
+.env
+.env.*
+!.env.example
+**/__pycache__
+**/*.py[cod]

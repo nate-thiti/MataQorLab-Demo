@@ -1,0 +1,5 @@
+invoice_date,invoice_no,product_code,customer_code,qty,unit_price,amount,PRICE_LEVEL
+2026-01-05,INV-1001,P-01,C-01,2,100,200,A
+2026-01-06,INV-1002,P-02,C-02,1,250,250,B
+2026-01-07,INV-1003,P-01,C-03,3,100,300,A
+2026-02-01,INV-1004,P-03,C-01,5,80,400,C

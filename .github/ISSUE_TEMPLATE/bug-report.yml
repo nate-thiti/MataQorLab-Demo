@@ -1,0 +1,59 @@
+name: Bug or reliability incident
+description: Report a reproducible MataQorLab defect with release evidence
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Proposed severity
+      options: ["P0", "P1", "P2", "P3"]
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment and release
+      placeholder: staging / commit SHA / browser and version
+    validations:
+      required: true
+  - type: input
+    id: correlation
+    attributes:
+      label: Correlation, request, job, or run IDs
+      description: Never include credentials or raw customer data.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Tenant and data scope
+      description: Redact user/org/source identifiers where needed.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      placeholder: "1. …\n2. …\n3. …"
+    validations:
+      required: true
+  - type: textarea
+    id: expected_actual
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: Impact assessment
+      options:
+        - label: Possible data loss or corruption
+        - label: Possible cross-tenant or security impact
+        - label: Possible billing impact
+        - label: Possible duplicate delivery/job
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence and regression plan
+    validations:
+      required: true

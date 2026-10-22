@@ -1,0 +1,70 @@
+{
+  "name": "analyst-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true
+  },
+  "scripts": {
+    "setup": "npm install",
+    "dev": "NEXT_DIST_DIR=.next-local next dev",
+    "dev:backend": "cd backend && ./venv/bin/python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload",
+    "dev:worker": "cd backend && ./venv/bin/python -m app.worker",
+    "setup:backend": "bash scripts/setup-backend.sh",
+    "build": "next build --webpack",
+    "build:turbopack": "next build",
+    "build:e2e": "NEXT_PUBLIC_API_URL=http://localhost:8000 NEXT_PUBLIC_SUPABASE_URL=https://example.supabase.co NEXT_PUBLIC_SUPABASE_ANON_KEY=test-anon-key E2E_AUTH_BYPASS=1 next build",
+    "start": "next start",
+    "lint": "eslint app src e2e proxy.ts next.config.ts playwright.config.ts",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "node scripts/assert-e2e-isolation.mjs && playwright test",
+    "test:e2e:staging": "node scripts/assert-staging-isolation.mjs && playwright test --config=playwright.staging.config.ts",
+    "test:load:staging": "k6 run scripts/load/k6-critical-path.js",
+    "test:e2e:ui": "playwright test --ui",
+    "clean": "bash scripts/clean-artifacts.sh"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.105.4",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@tanstack/react-virtual": "^3.14.9",
+    "axios": "^1.7.9",
+    "clsx": "^2.1.1",
+    "html-to-image": "1.11.13",
+    "lucide-react": "^0.474.0",
+    "motion": "^12.42.2",
+    "next": "^16.2.6",
+    "papaparse": "^5.5.3",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-easy-crop": "^5.5.7",
+    "react-markdown": "^10.1.0",
+    "read-excel-file": "^9.3.5",
+    "recharts": "^2.15.4",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "25.9.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.5.0",
+    "eslint": "^9.19.0",
+    "eslint-config-next": "^16.2.6",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.4"
+  },
+  "overrides": {
+    "nanoid": "3.3.18",
+    "browserslist": "4.28.7",
+    "js-yaml": "4.3.1"
+  }
+}

@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+venv
+.venv
+data
+.local
+tests
+supabase
+**/__pycache__
+**/*.py[cod]
+*.log
